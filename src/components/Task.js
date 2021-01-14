@@ -1,11 +1,19 @@
 import React from "react";
 
-function Task() {
+function Task({tasks, text, category, handleDelete}) {
+  // const [list, setList ] = useState([])
+
+//   function handleDelete(id) {
+// console.log(id)
+// const newList = tasks.filter((task) => task.text !== id)
+// setList(newList)
+//   }
+
   return (
-    <div className="task">
-      <div className="label">CATEGORY HERE</div>
-      <div className="text">TEXT HERE</div>
-      <button className="delete">X</button>
+    <div className="task" key={text}>
+      <div className="label">{category}</div>
+      <div className="text">{text}</div>
+      <button className="delete" onClick={() => handleDelete(text)}>X</button>
     </div>
   );
 }
